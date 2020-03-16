@@ -24,7 +24,7 @@ cloudinary.config({
   };
   let snapResult = await page.screenshot({
   }).then((result) => {
-    console.log(`${snapName} got some results.`);
+    console.log(`Screenshot taken: ${snapName}`);
     return result;
   }).catch(e => {
     console.error(`[${snapName}] Error in snapshotting`, e);
@@ -33,7 +33,7 @@ cloudinary.config({
 
   if (snapResult) {
     await browser.close();
-    console.log('to aqui')
+    console.log('Saving to cloudinary')
     return cloudinaryPromise(snapResult, cloudinary_options);
   } else {
     await browser.close();
@@ -49,6 +49,7 @@ function cloudinaryPromise(snapResult, cloudinary_options) {
           console.error('Upload to cloudinary failed: ', error);
           rej(error);
         }
+        console.log('Saved to cloudinary')
         res(cloudinary_result);
       }
     ).end(snapResult);
