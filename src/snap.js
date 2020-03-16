@@ -8,7 +8,7 @@ cloudinary.config({
 });
 
 (async () => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
   const page = await browser.newPage();
   await page.setViewport({
     width: 2448,
