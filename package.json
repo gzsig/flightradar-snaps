@@ -1,0 +1,14 @@
+{
+  "name": "flight-radar-snaps",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node --require dotenv/config ./src/snap.js"
+  },
+  "dependencies": {
+    "cloudinary": "^1.20.0",
+    "dotenv": "^8.2.0",
+    "puppeteer": "^2.1.1"
+  }
+}
