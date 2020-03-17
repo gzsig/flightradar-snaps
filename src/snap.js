@@ -10,7 +10,7 @@ cloudinary.config({
 const run = async cont => {
   if (cont > 2) {
     console.log("Didn't work this time 🥶");
-    return null;
+    process.abort();
   }
   try {
     const browser = await puppeteer.launch({ args: ["--no-sandbox"] });
@@ -80,7 +80,7 @@ function cloudinaryPromise(snapResult, cloudinary_options) {
           console.error("Upload to cloudinary failed 🤯 ", error);
           rej(error);
         }
-        console.log("Saved to cloudinary 📡");
+        console.log("Saved to cloudinary 🧾");
         res(cloudinary_result);
       })
       .end(snapResult);
