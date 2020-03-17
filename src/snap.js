@@ -46,7 +46,7 @@ const run = async cont => {
 const screenshot = async (page, browser) => {
   let snapName = new Date().getTime();
   const cloudinary_options = {
-    public_id: `teste/${snapName}` //flightSnaps
+    public_id: `flightSnaps/${snapName}`
   };
   try {
     let snapResult = await page.screenshot({});
