@@ -24,7 +24,7 @@ const run = async cont => {
       waitUntil: "networkidle0"
     });
     console.log("Setup complete 😉");
-    screenshot(page, browser);
+    await screenshot(page, browser);
     process.exit(0);
   } catch (err) {
     console.log("We had a problem setting up 🤯", err);
@@ -54,8 +54,7 @@ const screenshot = async (page, browser) => {
     console.log(`Screenshot taken: ${snapName} 📸`);
     await browser.close();
     console.log("Saving to cloudinary ⏳");
-    cloudinaryPromise(snapResult, cloudinary_options);
-    process.exit(0);
+    return cloudinaryPromise(snapResult, cloudinary_options);
   } catch (error) {
     console.error(`[${snapName}] Error in snapshotting 🤯`, error);
     try {
