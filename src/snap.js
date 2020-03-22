@@ -53,7 +53,8 @@ const screenshot = async (page, browser) => {
     console.log(`Screenshot taken: ${snapName} 📸`);
     await browser.close();
     console.log("Saving to cloudinary ⏳");
-    return cloudinaryPromise(snapResult, cloudinary_options);
+    cloudinaryPromise(snapResult, cloudinary_options);
+    process.exit(0);
   } catch (error) {
     console.error(`[${snapName}] Error in snapshotting 🤯`, error);
     try {
