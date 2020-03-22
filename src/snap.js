@@ -25,6 +25,7 @@ const run = async cont => {
     });
     console.log("Setup complete 😉");
     screenshot(page, browser);
+    process.exit(0);
   } catch (err) {
     console.log("We had a problem setting up 🤯", err);
     try {
