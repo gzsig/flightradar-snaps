@@ -4,12 +4,14 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start":"node ./src/index.js",
-    "snap": "node --require dotenv/config ./src/snap.js"
+    "start": "node ./src/index.js",
+    "snap": "node --require dotenv/config ./src/snap.js",
+    "download": "node --require dotenv/config ./src/download.js"
   },
   "dependencies": {
     "cloudinary": "^1.20.0",
     "dotenv": "^8.2.0",
+    "image-downloader": "^3.5.0",
     "puppeteer": "^2.1.1"
   }
 }
